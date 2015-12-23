@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>What is the R?</title>
+  <link href="site.css" rel="stylesheet">
+</head>
+ 
+<body>
+ 
+<nav id="nav01"></nav>
+ 
+<div id="main">
+  <h1>About R</h1>
+  <p>Example에 사용한 R의 요소들에 대해 알아보자.</p>
+  <p>1. Matrix </p>
+  <p>행렬은 Matrix()를 사용해 표현한다. 예를 들면, 아래와 같다.</p>
+  <p>> matrix(c(1,2,3,4,5,6,7,8,9),nrow=3)</p>
+  <p>여기서, nrow = 3이 의미하는 것은 행의 수를 지정해주는 것이다.</p>
+  <img src='C:\Users\yjm\djangogirls\blog\templates\blog\matrix1.jpg' height='50%' width='50%' align='center'>
+  <br>
+  <p>행의 이름을 부여하고자 하면, dimnames를 사용하면 된다.</p>
+  <p>> matrix(c(1,2,3,4,5,6,7,8,9),nrow=3,dimnames=list(c("item1","item2","item3"),</p>
+  <p><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote>c("feature1","feature2","feature3")))</blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></p>
+  <img src='C:\Users\yjm\djangogirls\blog\templates\blog\matrix2.jpg' height='50%' width='50%' align='center'>
+  <br>
+  <p> 2. Plot </p>
+  <p> 그래프는 Plot()을 사용하여 표현하며, 아래와 같이 사용할 수 있다.</p>
+  <p>> plot(x,y,xlabel,ylabel,main)</p>
+  <p>x는 x축 data, y는 y축 data이고, xlabel은 x축 제목, ylabel은 y축 제목이다.</p>
+  <p>main은 그래프의 제목을 나타낸다.</p>
+  <br>
+  <footer id="foot01"></footer>
+</div>
+ 
+<script src="script.js"></script>
+ 
+</body>
+</html>

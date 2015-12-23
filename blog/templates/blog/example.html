@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+    <head>
+	  <meta charset="utf-8">
+      <title>Example</title>
+      <link href="site.css" rel="stylesheet">
+    </head>
+ 
+    <body>
+        
+        <nav id="nav01"></nav>
+ 
+        <div id="main">
+        <h1>Example</h1>
+		<table border = 1>
+		<tr>
+		<th> </th>
+		<th>제47기</th>
+		<th>제46기</th>
+		<th>제45기</th>
+		</tr>
+		
+		<tr>
+		<td> 자산총계 </td>
+		<td> 246,567,573 </td>
+		<td> 230,422,958 </td>
+		<td> 214,075,018 </td>
+		</tr>
+		
+		<tr>
+		<td> 영업이익 </td>
+		<td> 20,270,677 </td>
+		<td> 25,025,071 </td>
+		<td> 36,785,013 </td>
+		</tr>
+		
+		<tr>
+		<td> 당기순이익 </td>
+		<td> 15,836,671 </td>
+		<td> 23,394,358 </td>
+		<td> 30,474,764 </td>
+		</tr>
+		
+		<tr>
+		<td> 자본총계 </td>
+		<td> 180,728,636 </td>
+		<td> 168,088,188 </td>
+		<td> 150,016,010 </td>
+		</tr>
+		
+		<tr>
+		<td> 부채총계 </td>
+		<td> 65,838,937 </td>
+		<td> 62,334,770 </td>
+		<td> 64,059,008 </td>
+		</tr>
+		
+		</table>
+		
+        <p> 위의 DATA를 바탕으로 R을 이용하여 ROA와 ROE를 구하여라. </p>
+		<br>
+		<p> 1. 먼저 R에 DATA를 행렬의 형식으로 입력한다. </p>
+		<p>> samsung <- matrix(c(246567573,20270677,15836671,180728636,65838937,230422958,25025071,</p>
+		<p><blockquote><blockquote><blockquote><blockquote>23394358,132677075,31383508,214075018,36785013,30474764,122370767,32455190),</blockquote></blockquote></blockquote></blockquote></p>
+        <p>&nbsp;    + nrow=5,</p>
+        <p>&nbsp;    + dimnames=list(c("자산총계","영업이익","당기순이익","자본총계","부채총계"),</p>
+        <p>&nbsp;    + c("제47기말","제46기말","제45기말")))</p>
+		<p> &nbsp;위와 같이 입력하면, 아래와 같이 나타난다. </p>
+		<p> > samsung</p>
+		<p><blockquote><blockquote><blockquote>&nbsp;&nbsp;   제47기말  &nbsp;&nbsp;제46기말  &nbsp;&nbsp;제45기말</blockquote></blockquote></blockquote></p>
+		<p><blockquote>자산총계       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;246567573 230422958 214075018</blockquote></p>
+		<p><blockquote>영업이익        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20270677  &nbsp;25025071  &nbsp;&nbsp;36785013</blockquote></p>
+		<p><blockquote>당기순이익      &nbsp;15836671  &nbsp;&nbsp;23394358  &nbsp;&nbsp;30474764</blockquote></p>
+		<p><blockquote>자본총계       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;180728636 132677075 122370767</blockquote></p>
+		<p><blockquote>부채총계        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;65838937  &nbsp;&nbsp;31383508  &nbsp;&nbsp;32455190</blockquote></p>
+		<br>
+		<p> 2. ROA = 영업이익 / 자산총계, ROE = 당기순이익 / 자본총계 를 계산한다. </p>
+		<p>&nbsp;> ROA <- samsung["영업이익",]/samsung["자산총계",]</p>
+		<p>&nbsp;> ROA</p>
+		<p><blockquote>&nbsp;	제47기말&nbsp;&nbsp;&nbsp;      제46기말&nbsp;&nbsp;&nbsp;      제45기말 </blockquote></p>
+		<p><blockquote>&nbsp;  0.08221145&nbsp;  0.10860494&nbsp;  0.17183235 </blockquote></p>
+		<p>&nbsp;> ROE <- samsung["당기순이익",]/samsung["자본총계",]</p>
+		<p>&nbsp;> ROE</p>
+		<p><blockquote>&nbsp;	제47기말&nbsp;&nbsp;&nbsp;      제46기말&nbsp;&nbsp;&nbsp;      제45기말 </blockquote></p>
+		<p><blockquote>&nbsp; 0.08762679&nbsp;  0.17632555&nbsp;  0.24903631 </blockquote></p>
+		<p> 3. ROA와 ROE의 Graph를 그리면 아래와 같다. </p>
+		<p> &nbsp;> opar <- par(mfrow=c(1,2))</p>
+		<p> &nbsp;> plot(XAxis,ROE,xlab = "기간",ylab = "ROE",main = "기간별 ROE")</p>
+		<p> &nbsp;> plot(XAxis,ROA,xlab = "기간",ylab = "ROA",main = "기간별 ROA")</p>
+		<p> &nbsp;> par(opar)</p>
+		<br>
+		<p> &nbsp;위와 같이 그리면, 아래와 같은 Graph를 얻을 수 있다.<blockquote><img src='C:\Users\yjm\djangogirls\blog\templates\blog\Graph.png' height='40%' width='40%'  align='center'></blockquote></p>
+		
+		
+        <footer id="foot01"></footer>
+        </div>
+ 
+        <script src="script.js"></script>
+ 
+    </body>
+</html>
+
